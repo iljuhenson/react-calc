@@ -2,7 +2,22 @@ import React from "react";
 import { useState } from "react";
 import ReactDOM from "react-dom";
 
-import "styles/index.css";
+import "./styles/index.css";
+
+function WebPage() {
+    return (
+        <main>
+            <Greetings />
+            <CalcBase />
+        </main>
+    )
+}
+
+function Greetings() {
+    return (
+        <h1>Your school calc!</h1>
+    )
+}
 
 function CalcBase() {
     return (
@@ -32,7 +47,7 @@ function CalcMarks(props) {
 
 function CalcResult() {
     return (
-        <div className = "clac-result">
+        <div className = "calc-result">
 
         </div>
     )
@@ -43,6 +58,24 @@ function CalcNumpad() {
     
     return (
         <div className = "calc-numpad">
+            <CalcInput />
+            <CalcDeletions />
+        </div>
+    )
+}
+
+function CalcDeletions() {
+    return (
+        <div className = "calc-deletions">
+            <CalcBack />
+            <CalcClear />
+        </div>
+    )
+}
+
+function CalcInput() {
+    return (
+        <div className = "calc-input">
             {drawButton(1)}
             {drawButton(2)}
             {drawButton(3)}
@@ -53,8 +86,6 @@ function CalcNumpad() {
             {drawButton(8)}
             {drawButton(9)}
             {drawButton(10)}
-            <CalcBack />
-            <CalcClear />
         </div>
     )
 }
@@ -67,19 +98,19 @@ function CalcButton(props) {
 
 function CalcBack() {
     return (
-        <button className="clac-button calc-back">Back</button>
+        <button className="calc-deletion calc-back">Back</button>
     )
 }
 
 function CalcClear() {
     return (
-        <button className="clac-button clac-clear">Clear</button>
+        <button className="calc-deletion calc-clear">Clear</button>
     )
 }
 
 // vanila js functions for the project
 function drawButton(num) {
-    <CalcButton value = {num} />
+    return <CalcButton value = {num} />
 }
 
-ReactDOM.render(<CalcBase />, document.querySelector("#root"));
+ReactDOM.render(<WebPage />, document.querySelector("#root"));
