@@ -75,6 +75,13 @@ h1 {
     display: flex;
     align-items: center;
     font-size: 26px;
+    overflow: hidden;
+}
+
+.mark {
+    padding: 10px;
+    background-color: #fff;
+    
 }
 
 /* calc numpad */
