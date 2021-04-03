@@ -79,9 +79,19 @@ h1 {
 }
 
 .mark {
-    padding: 10px;
+    width: 3rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mark-display-grey {
+    background-color: #eee;
+}
+
+.mark-display-whitish {
     background-color: #fff;
-    
 }
 
 /* calc numpad */

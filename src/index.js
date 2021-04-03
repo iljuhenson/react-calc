@@ -63,16 +63,19 @@ function CalcScreen({ marks }) {
 }
 
 function CalcMarks({ marks }) {
+    const displayLimit = 10;
+    let marksList = marks.marksList.slice(-displayLimit);
+
     return (
         <div className = "calc-marks">
-            {marks.marksList.map((mark, index) => <Mark key={index} mark={mark}/>)}
+            {marksList.map((mark, index) => <Mark key={index} calculatedClass={index % 2 === 1 ? "mark-display-grey" : "mark-display-whitish"} mark={mark}/>)}
         </div>
     )
 }
 
 function Mark(props) {
     return (
-        <div className="mark">{props.mark}</div>
+        <div className={"mark" + " " + props.calculatedClass}>{props.mark}</div>
     )
 }
 
